@@ -2,25 +2,20 @@
 
 A JavaScript based app to calculate mortgages according to the french amortization system.
 
-v0.2
+v1.0
 
-1. Open test.html in browser
+ ## Usage
+- Try it in: viprojekte.github.io/mortgage-calculator-public or open index.html in a browser
+- The math lives in js/mortgage.js, if you want to use it directly
 
-2. Open DevTools
-
-3. Go to "Console"
-
-4. Type "console.log(amortizationSchedule(LOAN, INTEREST, YEARS))"
-   
-   1. Change LOAN to the amount of the loan
-   
-   2. Change INTEREST to the interest rate (expressed as a percentage)
-   
-   3. Change YEARS to the years of the loan
-
-5. Function returns {schedule, totalInterest, totalCost}
-   
-   1. schedule is an array in which each row contains a breakdown of the monthly payments
+```javascript
+amortizationSchedule(LOAN, INTEREST, YEARS)
+```
+- 'LOAN' loan amount
+- 'INTEREST' annual interest rate, expressed as a percentage (i.e. 3.5)
+- 'YEARS' self explanatory, only whole years
+- Function returns {schedule, totalInterest, totalCost}
+   -  schedule is an array in which each row contains a breakdown of the monthly payments
 
 
 
