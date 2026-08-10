@@ -1,0 +1,90 @@
+// Copyright (C) viprojekte 2026
+// Licensed under the GNU Affero General Public License v3.0.
+// See LICENSE file for details, or <https://www.gnu.org/licenses/>.
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hipoteca</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/mortgage.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Calculadora de Hipoteca</h1>
+    </header>
+    <main>
+        <section aria-labelledby="form-heading">
+            <h2 id="form-heading">Datos del préstamo</h2>
+            <form id="mortgageForm">
+                <div class="form-field">
+                    <label for="propertyPrice">Precio de la propiedad</label>
+                    <input type="number" id="propertyPrice" name="propertyPrice" required step="0.01" min="1">
+                </div>
+                <div class="form-field">
+                    <label for="rate">Interés</label>
+                    <input type="number" id="rate" name="rate" required min="0" max="50" step="0.01">
+                </div>
+                <div class="form-field">
+                    <label for="term">Años</label>
+                    <input type="number" id="term" name="term" required step="1" min="1">
+                </div>
+                <div class="form-field">
+                    <label for="downPaymentEuro">Pago inicial (€)</label>
+                    <input type="number" id="downPaymentEuro" name="downPaymentEuro" required step="0.01" min="0">
+                </div>
+                <div class="form-field">
+                    <label for="downPaymentPercent">Pago inicial (%)</label>
+                    <input type="number" id="downPaymentPercent" name="downPaymentPercent" required min="0" max="100">
+                </div>
+                <button type="submit">Calcular</button>
+            </form>
+        </section>
+        <section aria-labelledby="results-heading">
+            <h2 id="results-heading">Resultados</h2>
+            <dl>
+                <div class="result-tile">
+                    <dt>Pago mensual</dt>
+                    <dd id="resultMonthlyPayment"></dd>
+                </div>
+                <div class="result-tile">
+                    <dt>Interés total</dt>
+                    <dd id="resultTotalInterest"></dd>
+                </div>
+                <div class="result-tile">
+                    <dt>Coste total</dt>
+                    <dd id="resultTotalCost"></dd>
+                </div>
+                <div class="result-tile">
+                    <dt>Préstamo-valor (LTV)</dt>
+                    <dd id="resultLTV"></dd>
+                </div>
+            </dl>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Pago</th>
+                            <th>Interés</th>
+                            <th>Principal</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Solo para uso personal, estimación no vinculante</p>
+    </footer>
+</body>
+
+</html>
